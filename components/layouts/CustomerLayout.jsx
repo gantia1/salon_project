@@ -8,7 +8,7 @@ function CustomerLayout({ children }) {
     return (
         <>
             <Header/>
-            <main className="container mx-auto grow">
+            <main className="my-auto grow">
                 {children}
             </main>
             <Footer/>
