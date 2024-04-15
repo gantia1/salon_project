@@ -3,5 +3,11 @@
     "salons": "სალონები",
     "about": "ჩვენ შესახებ",
     "contact": "კონტაქტი",
-    "salonRegistration": "სალონის რეგისტრაცია"
+    "salonRegistration": "სალონის რეგისტრაცია",
+    "register": "რეგისტრაცია",
+    "login": "შესვლა",
+    "reservation": "დაჯავშნა",
+    "procedures": "პროცედურები",
+    "allRights": "ყველა უფლება დაცულია",
+    "subscribeNews": "სიახლეების გამოწერა"
 }

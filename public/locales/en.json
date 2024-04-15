@@ -3,5 +3,11 @@
     "salons": "Salons",
     "about": "About Us",
     "contact": "Contact",
-    "salonRegistration": "Salon Registration"
+    "salonRegistration": "Salon Registration",
+    "register": "Register",
+    "login": "Log in",
+    "reservation": "Reservation",
+    "procedures": "Procedures",
+    "allRights": "All rights reserved",
+    "subscribeNews": "Subscribe to news"
 }
