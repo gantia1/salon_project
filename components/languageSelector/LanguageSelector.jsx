@@ -50,7 +50,7 @@ function LanguageSelector() {
         <div className="relative" ref={dropdownRef}>
             <button className="flex gap-x-2.5 items-center" type="button" onClick={toggleDropdown}>
                 {selectedLanguage === 'ka' ? <GeSVG/> : <EnSVG/>}
-                <ArrowSVG className={`ease-out duration-300 rotate-${isDropdownOpen ? '180' : '0'}`}/>
+                <ArrowSVG className={`ease-out duration-300 transform ${isDropdownOpen ? 'rotate-180' : 'rotate-0'}`} />
             </button>
             {isDropdownOpen && (
                 <div
