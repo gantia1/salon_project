@@ -18,7 +18,7 @@ module.exports = {
       },
       fontFamily: {
         customPrimary: ['IngiriArial', 'sans-serif'],
-        customBold: ['NinoMtavruli_Regular', 'sans-serif'],
+        customBold: ['BPG Nino Mtavruli', 'sans-serif'],
       },
       boxShadow: {
         custom: '0px 10px 20px 0px #0000001A',

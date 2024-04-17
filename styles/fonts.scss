@@ -1,13 +1,11 @@
 @font-face {
-  font-family: 'NinoMtavruli_Regular';
-  src: url("/public/assets/fonts/BPG Nino Mtavruli.otf") format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'IngiriArial';
+  src: local("IngiriArial"),
+  url("../public/assets/fonts/BPG Ingiri Arial.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'IngiriArial';
-  src: url("/public/assets/fonts/BPG Ingiri Arial.ttf") format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  font-family: "BPG Nino Mtavruli";
+  src: local("BPG Nino Mtavruli"),
+  url("../public/assets/fonts/BPG Nino Mtavruli.otf") format("truetype");
 }
