@@ -31,12 +31,12 @@ function Footer() {
 
     return (
         <footer className="w-100 bg-[#302B39] text-white">
-            <div className="max-w-[1440px] mx-auto px-[100px] pt-5 pb-5">
+            <div className="max-w-[1440px] mx-auto px-5 lg:px-[100px] pt-5 pb-5">
                 <div className="flex justify-between items-center">
 
                     <Image src={Logo} alt="logo"/>
 
-                    <ul className="flex gap-x-3 text-secondary-gray">
+                    <ul className="lg:flex gap-x-3 text-secondary-gray hidden">
                         {menuItems.map((item, index) => (
                             <li key={index}>
                                 <Link href={item.path}

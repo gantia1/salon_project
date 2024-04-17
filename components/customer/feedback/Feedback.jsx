@@ -32,7 +32,7 @@ function Feedback() {
     ];
 
     return (
-        <div className="pt-[30px] pb-10 px-[100px] max-w-[1440px] m-auto">
+        <div className="pt-[30px] pb-10 px-5 lg:px-[100px] max-w-[1440px] m-auto">
             <h3 className="text-center font-customBold text-2xl font-bold">რას ამბობენ ჩვენზე</h3>
             <Swiper
                 className="feedbackSwiper"

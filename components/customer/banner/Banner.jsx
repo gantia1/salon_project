@@ -17,22 +17,22 @@ function Banner() {
 
     return (
         <div className="w-full bg-light-purple">
-            <div className="flex justify-between gap-x-2 max-w-[1440px] m-auto px-[100px] text-sm xl:text-base">
-                <div className="relative pt-20 pb-14 max-w-[430px] flex flex-col gap-y-2.5 justify-between">
-                    <div>
-                        <LeftSVG className="absolute -left-16 top-[50px]"/>
-                        <p>სალონში უკვე გელიან!</p>
+            <div className="flex justify-center lg:justify-between gap-x-2 max-w-[1440px] m-auto text-sm xl:text-base px-5 lg:px-[100px] flex-col lg:flex-row">
+                <div className="relative py-5 lg:pt-20 lg:pb-14 lg:max-w-[430px] flex flex-col gap-y-2.5 justify-between">
+                    <div className="flex flex-col items-center lg:block">
+                        <LeftSVG className="absolute left-0 lg:-left-16 lg:top-[50px]"/>
+                        <p className="mb-2.5">სალონში უკვე გელიან!</p>
                         <Image src={Logo} alt="logo"/>
-                        <hr/>
-                        <p className="my-5">
+                        <hr className="mt-2.5 mb-7"/>
+                        <p className="text-center lg:text-start my-5">
                             დაჯავშნე სასურველი სპეციალისტის პროცედურა
                             სასურველ სალონში სწრაფად და მარტივად.
                         </p>
-                        <PrimaryButton type="button" className="w-fit" onClick={() => console.log('test')}>
+                        <PrimaryButton type="button" className="w-full lg:w-fit" onClick={() => console.log('test')}>
                             {t('reservation')}
                         </PrimaryButton>
                     </div>
-                    <div className="flex items-center">
+                    <div className="hidden lg:flex items-center">
                         <a className="w-fit" href="https://play.google.com/store/apps" target="_blank"
                            rel="noopener noreferrer">
                             <GooglePlay/>

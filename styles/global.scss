@@ -1,4 +1,4 @@
-.salon-cards {
+.salon-cards, .salon-images, .procedures-card {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -88,9 +88,30 @@
   content: unset !important;
 }
 
+.ant-drawer-content-wrapper {
+  width: 100% !important;
+
+  .ant-drawer-content {
+    background: #302B39F2 !important;
+    backdrop-filter: blur(5px) !important;
+  }
+}
+
+.ant-drawer-header {
+  align-self: flex-end;
+
+  .ant-drawer-close {
+    color: #fff;
+  }
+}
+
 //header menu
 .slide-border {
   position: relative;
+}
+
+.slide-border.active {
+  color: #7E41FF;
 }
 
 .slide-border:after {
@@ -107,7 +128,6 @@
 .slide-border.active:after {
   width: 100%;
 }
-
 
 //swiper
 .swiper {
@@ -132,7 +152,7 @@
 }
 
 
-.swiper-pagination-bullet, .swiper-pagination-bullet-active  {
+.swiper-pagination-bullet, .swiper-pagination-bullet-active {
   width: 10px !important;
   height: 5px !important;
   border-radius: 5px !important;
@@ -144,3 +164,6 @@
 }
 
 
+.ant-image {
+  min-width: 70px !important;
+}

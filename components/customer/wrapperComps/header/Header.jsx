@@ -7,10 +7,11 @@ import LanguageSelector from "@/components/languageSelector/LanguageSelector";
 import {ModalsContext} from "@/components/contexts/ModalsContexts";
 import {CustomerContext} from "@/components/contexts/CustomerContext";
 import ProfileSVG from "@/public/assets/images/svg/profile.svg";
+import BurgerSVG from "@/public/assets/images/svg/burger.svg";
 
 function Header() {
     const {t} = useTranslation();
-    const {setShowAuthorizationModal, setShowRegisterModal} = useContext(ModalsContext);
+    const {setShowAuthorizationModal, setShowRegisterModal, setShowBurgerModal} = useContext(ModalsContext);
     const {user} = useContext(CustomerContext);
     const currentPath = usePathname();
 
@@ -27,9 +28,9 @@ function Header() {
     return (
         <header className="w-full">
             <nav
-                className="flex justify-between h-[62px] items-center max-w-[1440px] m-auto px-[100px] text-sm xl:text-base">
+                className="flex justify-between h-[62px] items-center max-w-[1440px] m-auto text-sm xl:text-base px-5 lg:px-[100px]">
                 <Link href="/">LOGO</Link>
-                <ul className="flex gap-x-3.5 xl:gap-x-[30px]">
+                <ul className="lg:flex gap-x-3.5 xl:gap-x-[30px] hidden">
                     {menuItems.map((item, index) => (
                         <li key={index}
                             className={`${index === menuItems.length - 1 ? 'border-l border-dark-purple pl-3.5 xl:pl-[30px]' : ''} ${isActive(item.path) ? 'slide-border active' : 'slide-border'}`}>
@@ -40,11 +41,11 @@ function Header() {
                     ))}
                 </ul>
 
-                <div className="flex gap-5 items-center">
+                <div className="lg:flex gap-5 items-center hidden">
                     {user ? (
                         <>
                             <ProfileSVG/>
-                            <p>{user.username}</p>
+                            <p className="font-customBold font-bold">{user.username}</p>
                         </>
                     ) : (
                         <>
@@ -58,6 +59,9 @@ function Header() {
                     )}
                     <LanguageSelector/>
                 </div>
+                <button className="block lg:hidden" type="button" onClick={() => setShowBurgerModal(true)}>
+                    <BurgerSVG/>
+                </button>
             </nav>
         </header>
     );

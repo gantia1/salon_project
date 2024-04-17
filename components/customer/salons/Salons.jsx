@@ -7,7 +7,7 @@ function Salons() {
     const {t} = useTranslation();
     return (
         <div className="w-full bg-light-purple">
-            <div className="pt-[30px] pb-10 px-[100px] max-w-[1440px] m-auto">
+            <div className="pt-[30px] pb-10 px-5 lg:px-[100px] max-w-[1440px] m-auto">
                 <h3 className="text-center font-customBold text-2xl font-bold">{t('salons')}</h3>
                 <CustomLinkWithArrow href="/salons">
                     ყველას ნახვა
