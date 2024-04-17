@@ -23,12 +23,20 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    color: unset;
+}
+
 * {
     box-sizing: border-box;
 }
 
 p {
     margin: 0;
+}
+
+label, a, p {
+    font-family: IngiriArial, sans-serif;
 }
 
 hr {
