@@ -5,6 +5,7 @@ import Salons from "@/components/customer/salons/Salons";
 import BannerLower from "@/components/customer/banner/BannerLower";
 import AuthorizationModal from "@/components/modals/AuthorizationModal";
 import RegisterModal from "@/components/modals/RegisterModal";
+import Feedback from "@/components/customer/feedback/Feedback";
 
 export default function Home() {
     return (
@@ -12,6 +13,7 @@ export default function Home() {
             <Banner/>
             <Procedures/>
             <Salons/>
+            <Feedback/>
             <BannerLower/>
             <AuthorizationModal/>
             <RegisterModal/>
