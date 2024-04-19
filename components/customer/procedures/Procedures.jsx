@@ -12,7 +12,7 @@ function Procedures() {
             <CustomLinkWithArrow href="/about-us">
                 ყველას ნახვა
             </CustomLinkWithArrow>
-            <div className="procedures-card flex gap-5 lg:flex-wrap overflow-x-auto pb-5 lg:pb-0">
+            <div className="procedures-card flex gap-5 lg:flex-wrap overflow-x-auto pb-5">
                 {[...Array(12)].map((_, index) => (
                     <ProceduresCard text="თმა (ქალი)" key={index}/>
                 ))}
