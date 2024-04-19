@@ -10,7 +10,7 @@ import Direction from "@/public/assets/images/svg/direction.svg";
 import Image from 'next/image';
 import {Image as AntImage} from 'antd';
 
-export default function SalonPage() {
+export default function Salon() {
     const router = useRouter();
     const {id} = router.query;
 
@@ -49,4 +49,4 @@ export default function SalonPage() {
     );
 }
 
-SalonPage.layout = 'CustomerLayout';
+Salon.layout = 'CustomerLayout';
