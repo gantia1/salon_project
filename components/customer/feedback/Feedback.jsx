@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 
-import {FreeMode, Pagination} from 'swiper/modules';
+import {Pagination} from 'swiper/modules';
 
 function Feedback() {
     const data = [
@@ -50,7 +50,7 @@ function Feedback() {
                         slidesPerView: 3
                     }
                 }}
-                modules={[FreeMode, Pagination]}
+                modules={[Pagination]}
             >
                 {data.map((feedback, index) => (
                     <SwiperSlide

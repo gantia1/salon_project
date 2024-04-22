@@ -32,7 +32,7 @@ function Footer() {
     return (
         <footer className="w-100 bg-[#302B39] text-white">
             <div className="max-w-[1440px] mx-auto px-5 lg:px-[100px] pt-5 pb-5">
-                <div className="flex justify-between items-center">
+                <div className="flex items-center gap-5 justify-center flex-wrap sm:justify-between sm:flex-nowrap">
 
                     <Image src={Logo} alt="logo"/>
 
