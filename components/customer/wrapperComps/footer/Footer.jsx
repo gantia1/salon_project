@@ -32,15 +32,16 @@ function Footer() {
     return (
         <footer className="w-100 bg-[#302B39] text-white">
             <div className="max-w-[1440px] mx-auto px-5 lg:px-[100px] pt-5 pb-5">
-                <div className="flex items-center gap-5 justify-center flex-wrap sm:justify-between sm:flex-nowrap">
+                <div
+                    className="flex flex-col lg:flex-row items-center gap-12 lg:gap-5 justify-center flex-wrap sm:justify-between sm:flex-nowrap">
 
                     <Image src={Logo} alt="logo"/>
 
-                    <ul className="lg:flex gap-x-3 text-secondary-gray hidden">
+                    <ul className="flex flex-col gap-3 text-secondary-gray lg:flex-row">
                         {menuItems.map((item, index) => (
                             <li key={index}>
                                 <Link href={item.path}
-                                      className={`${index !== 0 ? 'border-l border-secondary-gray pl-3' : ''}`}>
+                                      className={`${index !== 0 ? 'lg:border-l lg:border-secondary-gray lg:pl-3' : ''}`}>
                                     {item.label}
                                 </Link>
                             </li>
@@ -48,7 +49,7 @@ function Footer() {
                     </ul>
 
 
-                    <ul className="flex gap-x-5 items-center">
+                    <ul className="flex gap-x-5 items-center justify-around w-full lg:w-fit lg:justify-start">
                         {socialMediaLinks.map((link, index) => (
                             <li key={index}>
                                 <a href={link.href} target="_blank" rel="noopener noreferrer">

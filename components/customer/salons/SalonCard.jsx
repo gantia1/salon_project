@@ -7,8 +7,8 @@ import Direction from "@/public/assets/images/svg/direction.svg";
 
 function SalonCard({title, time, phone, location}) {
     return (
-        <div className="p-[30px] rounded-[10px] bg-white min-w-[345px] shadow-custom flex flex-col gap-y-4">
-            <h3 className="font-customBold text-2xl font-bold line-clamp-2">{title}</h3>
+        <div className="p-[30px] rounded-[10px] bg-white  shadow-custom flex flex-col gap-y-4 lg:min-w-[345px]">
+            <h3 className="text-left font-customBold text-2xl font-bold line-clamp-2">{title}</h3>
             <p className="flex gap-x-2.5"><Time/> {time}</p>
             <a className="flex gap-x-2.5 w-fit" href={`tel:${phone}`} rel="noopener noreferrer">
                 <Phone/> {phone}
