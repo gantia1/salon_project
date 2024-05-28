@@ -8,6 +8,10 @@ module.exports = {
             screens: {
                 'sm': '440px',
             },
+            gridTemplateColumns: {
+                'auto': 'repeat(auto-fill, minmax(320px, 1fr))',
+                'sm': 'repeat(auto-fill, minmax(280px, 1fr))',
+            },
             colors: {
                 'primary-black': '#353535',
                 'primary-gray': '#7B809A',
