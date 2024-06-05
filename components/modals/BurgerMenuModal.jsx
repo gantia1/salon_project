@@ -2,16 +2,19 @@ import React, {useContext, useEffect} from 'react';
 import {Drawer} from "antd";
 import {ModalsContext} from "@/components/contexts/ModalsContexts";
 import Link from "next/link";
-import GeSVG from '@/public/assets/images/svg/ge.svg';
-import EnSVG from '@/public/assets/images/svg/en.svg';
+import GeIcon from '@/public/assets/images/svg/ge.svg';
+import EnIcon from '@/public/assets/images/svg/en.svg';
+import RuIcon from '@/public/assets/images/svg/ru.svg';
 import {useTranslation} from "next-i18next";
 import {useRouter} from 'next/router';
+import {CustomerContext} from "@/components/contexts/CustomerContext";
 
 function BurgerMenuModal() {
     const {showBurgerModal, setShowBurgerModal} = useContext(ModalsContext);
     const {t} = useTranslation();
     const router = useRouter();
     const {i18n} = useTranslation();
+    const {setLanguage} = useContext(CustomerContext);
     const menuItems = [
         {path: '/', label: t('home')},
         {path: '/salons', label: t('salons')},
@@ -33,6 +36,7 @@ function BurgerMenuModal() {
 
 
     const changeLanguage = (lng) => {
+        setLanguage(lng);
         i18n.changeLanguage(lng);
         setShowBurgerModal(false);
     };
@@ -55,7 +59,7 @@ function BurgerMenuModal() {
                         type="button"
                         onClick={() => changeLanguage('ka')}
                     >
-                        <GeSVG/> ქართული
+                        <GeIcon/> ქართული
                     </button>
                 </li>
                 <li>
@@ -64,7 +68,16 @@ function BurgerMenuModal() {
                         type="button"
                         onClick={() => changeLanguage('en')}
                     >
-                        <EnSVG/> English
+                        <EnIcon/> English
+                    </button>
+                </li>
+                <li>
+                    <button
+                        className={`flex items-center gap-x-5 rounded px-5 py-2.5 lng-btn w-[180px] ${i18n.language === 'ru' ? 'active' : ''}`}
+                        type="button"
+                        onClick={() => changeLanguage('ru')}
+                    >
+                        <RuIcon/> Русский
                     </button>
                 </li>
             </ul>

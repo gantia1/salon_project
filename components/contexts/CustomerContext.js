@@ -7,9 +7,14 @@ export const CustomerContext = createContext({
     user: null,
     setUser: () => {},
     getUser: () => {},
+    language: "ka",
+    setLanguage: () => {},
 });
 
 export default function CustomerContextProvider({children}) {
+    const defaultLanguage = typeof window !== 'undefined' ? localStorage.getItem('language') || 'ka' : 'ka';
+
+    const [language, setLanguage] = useState(defaultLanguage);
     const [accessToken, setAccessToken] = useState(
         typeof window !== 'undefined' ? localStorage.getItem('accessToken') || '' : ''
     );
@@ -29,6 +34,10 @@ export default function CustomerContextProvider({children}) {
         getUser();
     }, [accessToken]);
 
+    useEffect(() => {
+        localStorage.setItem('language', language);
+    }, [language]);
+
     return (
         <CustomerContext.Provider
             value={{
@@ -37,6 +46,8 @@ export default function CustomerContextProvider({children}) {
                 user,
                 setUser,
                 getUser,
+                language,
+                setLanguage,
             }}
         >
             {children}
