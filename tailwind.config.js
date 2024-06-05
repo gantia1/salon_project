@@ -10,6 +10,7 @@ module.exports = {
             },
             gridTemplateColumns: {
                 'auto': 'repeat(auto-fill, minmax(320px, 1fr))',
+                'auto-170': 'repeat(auto-fill, minmax(170px, 1fr))',
                 'sm': 'repeat(auto-fill, minmax(280px, 1fr))',
             },
             colors: {
