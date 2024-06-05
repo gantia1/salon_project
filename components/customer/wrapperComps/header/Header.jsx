@@ -29,7 +29,12 @@ function Header() {
         <header className="w-full">
             <nav
                 className="flex justify-between h-[62px] items-center max-w-[1440px] m-auto text-sm xl:text-base px-5 lg:px-[100px]">
-                <Link href="/">LOGO</Link>
+                <div className="flex gap-2">
+                    <button className="lg:hidden block" type="button" onClick={() => setShowBurgerModal(true)}>
+                        <BurgerSVG/>
+                    </button>
+                    <Link href="/">LOGO</Link>
+                </div>
                 <ul className="lg:flex gap-x-3.5 xl:gap-x-[30px] hidden">
                     {menuItems.map((item, index) => (
                         <li key={index}
@@ -41,27 +46,26 @@ function Header() {
                     ))}
                 </ul>
 
-                <div className="lg:flex gap-5 items-center hidden">
+                <div className="lg:flex gap-5 items-center">
                     {user ? (
-                        <>
+                        <Link href="/profile" className="flex gap-5 items-center">
                             <ProfileSVG/>
-                            <p className="font-customBold font-bold">{user.username}</p>
-                        </>
+                            {/*<p className="font-customBold font-bold">{user.username}</p>*/}
+                            <p className="font-customBold font-bold">პროფილი</p>
+                        </Link>
                     ) : (
-                        <>
-                            <button className="text-sm font-customBold font-bold text-primary" type="button"
+                        <div className="flex gap-2.5 text-[12px] sm:text-base">
+                            <button className="font-customBold font-bold text-primary" type="button"
                                     onClick={() => setShowAuthorizationModal(true)}>
                                 {t('login')}
                             </button>
-                            <PrimaryButton type="button" onClick={() => setShowRegisterModal(true)}
-                                           children={t('register')}/>
-                        </>
+                            <PrimaryButton type="button" className="text-[12px] sm:text-base"
+                                           onClick={() => setShowRegisterModal(true)}>{t('register')}
+                            </PrimaryButton>
+                        </div>
                     )}
                     <LanguageSelector/>
                 </div>
-                <button className="block lg:hidden" type="button" onClick={() => setShowBurgerModal(true)}>
-                    <BurgerSVG/>
-                </button>
             </nav>
         </header>
     );

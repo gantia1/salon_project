@@ -36,7 +36,7 @@ export default function CustomModal({
             <div className="flex flex-col justify-center items-center w-full gap-y-5">
                 <h3 className="font-customBold font-bold text-3xl">{title}</h3>
 
-                <div className="flex w-full gap-x-2.5">
+                <div className="flex w-full gap-2.5 flex-wrap lg:flex-nowrap">
                     <button
                         className="flex gap-x-2.5 bg-white border border-[#E7EBEE] rounded-[2px] items-center py-2.5 w-full justify-center"
                         type="button" onClick={() => handleLogin('google')}>

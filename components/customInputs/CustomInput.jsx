@@ -2,7 +2,7 @@ import React from 'react';
 import {Form, Input} from "antd";
 import {useTranslation} from "next-i18next";
 
-function CustomInput({name, label, prefix, errorMessage}) {
+function CustomInput({name, label, placeholder, prefix, errorMessage, className}) {
     const {t} = useTranslation();
 
     const isPassword = name === 'password';
@@ -16,6 +16,7 @@ function CustomInput({name, label, prefix, errorMessage}) {
 
     return (
         <Form.Item
+            className={className}
             name={name}
             label={label}
             rules={rules}
@@ -23,9 +24,9 @@ function CustomInput({name, label, prefix, errorMessage}) {
             help={errorMessage}
         >
             {isPassword ? (
-                <Input.Password className="rounded-[2px] p-3" placeholder={label} prefix={prefix}/>
+                <Input.Password className="rounded-[2px] p-3" placeholder={placeholder} prefix={prefix}/>
             ) : (
-                <Input className="rounded-[2px] p-3" placeholder={label} prefix={prefix}/>
+                <Input className="rounded-[2px] p-3" placeholder={placeholder} prefix={prefix}/>
             )}
         </Form.Item>
     );

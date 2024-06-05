@@ -3,15 +3,13 @@ import {Pagination} from "swiper/modules";
 import {Swiper} from "swiper/react";
 
 
-function CustomSwiper({children, className, pagination, breakpoints}) {
+export default function CustomSwiper({children, className, breakpoints}) {
     return (
         <Swiper
             className={className}
             slidesPerView={1}
             spaceBetween={30}
-            pagination={
-                pagination === false ? false : {clickable: true,}
-            }
+            pagination={{clickable: true}}
             breakpoints={breakpoints}
             modules={[Pagination]}
         >
@@ -19,5 +17,3 @@ function CustomSwiper({children, className, pagination, breakpoints}) {
         </Swiper>
     );
 }
-
-export default CustomSwiper;
