@@ -9,6 +9,7 @@ import {useTranslation} from "next-i18next";
 import api from "@/utils/api";
 import {CustomerContext} from "@/components/contexts/CustomerContext";
 import CustomInput from "@/components/customInputs/CustomInput";
+import Link from "next/link";
 
 function AuthorizationModal() {
     const [errors, setErrors] = useState();
@@ -53,15 +54,16 @@ function AuthorizationModal() {
                         key={index}
                         name={field.name}
                         label={t(field.label)}
+                        placeholder={t(field.label)}
                         prefix={field.prefix}
                         errorMessage={errors}
                     />
                 ))}
 
                 <div className="flex justify-end text-primary-gray mb-5 hover:text-secondary-gray">
-                    <a href="/" rel="noopener noreferrer">
+                    <Link href="/">
                         {t('forgotPassword')}
-                    </a>
+                    </Link>
                 </div>
                 <Form.Item className="bg-white">
                     <PrimaryButton type="submit" className="w-full">
