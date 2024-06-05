@@ -5,8 +5,10 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 import CustomSwiper from "@/components/customSwiper/CustomSwiper";
+import Container from "@/components/container/Container";
+import {Heading} from "@/components/heading/Heading";
 
-function Feedback() {
+export default function Feedback() {
 
     const breakpoints = {
         620: {
@@ -41,8 +43,8 @@ function Feedback() {
     ];
 
     return (
-        <div className="pt-[30px] pb-10 px-5 lg:px-[100px] max-w-[1440px] m-auto">
-            <h3 className="text-center font-customBold text-2xl font-bold">რას ამბობენ ჩვენზე</h3>
+        <Container className="pt-[30px] pb-10">
+            <Heading>რას ამბობენ ჩვენზე</Heading>
             <CustomSwiper breakpoints={breakpoints} className='feedback-swiper'>
                 {data.map((feedback, index) => (
                     <SwiperSlide
@@ -56,8 +58,6 @@ function Feedback() {
                     </SwiperSlide>
                 ))}
             </CustomSwiper>
-        </div>
+        </Container>
     );
 }
-
-export default Feedback;

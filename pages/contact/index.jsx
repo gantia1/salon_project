@@ -1,10 +1,10 @@
 import React from 'react';
 import Container from "@/components/container/Container";
 
-export default function AboutUs() {
+export default function Contact() {
     return (
-        <Container>About us</Container>
+        <Container>contact</Container>
     );
 }
 
-AboutUs.layout = 'GuestLayout';
+Contact.layout = "GuestLayout";

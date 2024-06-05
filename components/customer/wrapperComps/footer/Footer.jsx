@@ -8,8 +8,9 @@ import Twitter from "@/public/assets/images/svg/twitter.svg";
 import Whatsapp from "@/public/assets/images/svg/whatsapp.svg";
 import {useTranslation} from "next-i18next";
 import Link from "next/link";
+import Container from "@/components/container/Container";
 
-function Footer() {
+export default function Footer() {
 
     const year = new Date().getFullYear();
     const {t} = useTranslation();
@@ -31,12 +32,10 @@ function Footer() {
 
     return (
         <footer className="w-100 bg-[#302B39] text-white">
-            <div className="max-w-[1440px] mx-auto px-5 lg:px-[100px] pt-5 pb-5">
+            <Container className="pt-5 pb-5" bg="#302B39">
                 <div
                     className="flex flex-col lg:flex-row items-center gap-12 lg:gap-5 justify-center flex-wrap sm:justify-between sm:flex-nowrap">
-
                     <Image src={Logo} alt="logo"/>
-
                     <ul className="flex flex-col gap-3 text-secondary-gray lg:flex-row">
                         {menuItems.map((item, index) => (
                             <li key={index}>
@@ -47,9 +46,7 @@ function Footer() {
                             </li>
                         ))}
                     </ul>
-
-
-                    <ul className="flex gap-x-5 items-center justify-around w-full lg:w-fit lg:justify-start">
+                    <ul className="flex gap-x-5 items-center justify-center w-full lg:w-fit lg:justify-start">
                         {socialMediaLinks.map((link, index) => (
                             <li key={index}>
                                 <a href={link.href} target="_blank" rel="noopener noreferrer">
@@ -60,11 +57,9 @@ function Footer() {
                     </ul>
 
                 </div>
-            </div>
+            </Container>
             <hr/>
             <p className="text-center py-2.5">GlowHub {year} &copy; {t('allRights')}</p>
         </footer>
     );
 }
-
-export default Footer;

@@ -2,14 +2,14 @@ import React from 'react';
 import {useTranslation} from "next-i18next";
 import ProceduresCard from "@/components/customer/procedures/ProceduresCard";
 import CustomLinkWithArrow from "@/components/customer/customLink/CustomLink";
+import Container from "@/components/container/Container";
+import {Heading} from "@/components/heading/Heading";
 
-function Procedures() {
-    const {t} = useTranslation();
-
+export default function Procedures({title, bg}) {
     return (
-        <div className="pt-[30px] pb-10 px-5 lg:px-[100px] max-w-[1440px] m-auto">
-            <h3 className="text-center font-customBold text-2xl font-bold">{t('procedures')}</h3>
-            <CustomLinkWithArrow href="/about-us">
+        <Container className="pt-[30px] pb-10" bg={bg}>
+            <Heading>{title}</Heading>
+            <CustomLinkWithArrow href="/">
                 ყველას ნახვა
             </CustomLinkWithArrow>
             <div className="procedures-card flex gap-5 lg:flex-wrap overflow-x-auto pb-5">
@@ -17,8 +17,6 @@ function Procedures() {
                     <ProceduresCard text="თმა (ქალი)" key={index}/>
                 ))}
             </div>
-        </div>
+        </Container>
     );
 }
-
-export default Procedures;

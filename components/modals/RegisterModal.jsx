@@ -48,6 +48,7 @@ function RegisterModal() {
                         key={index}
                         name={field.name}
                         label={t(field.label)}
+                        placeholder={t(field.label)}
                         prefix={field.prefix}
                         errorMessage={errors?.[field.name]}
                     />
