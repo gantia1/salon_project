@@ -1,26 +1,31 @@
 import { useRouter } from 'next/router';
 import { useContext, useEffect } from 'react';
-import { Spin } from 'antd';
+import {message, Spin} from 'antd';
 import api from '../../../utils/api';
 import {CustomerContext} from "@/components/contexts/CustomerContext";
+import {ModalsContext} from "@/components/contexts/ModalsContexts";
+import {useTranslation} from "next-i18next";
 
 const type = 'google';
 export default function GoogleRedirect() {
     const { push, query } = useRouter();
-    const customerContext = useContext(CustomerContext);
-
+    const {setShowAuthorizationModal} = useContext(ModalsContext);
     const {getUser, setAccessToken} = useContext(CustomerContext);
+    const {t} = useTranslation();
 
     useEffect(() => {
-        if (query?.code !== undefined) {
-            api.get(`/auth/${type}/callback?code=${query?.code}`)
+        if (query?.error === 'access_denied') {
+            push('/');
+            message.error(t('authFailed'));
+            setShowAuthorizationModal(true);
+        } else if (query?.code !== undefined) {
+            api.get(`/auth/${type}/callback?code=${query.code}`)
                 .then(async (res) => {
-                    console.log(res)
+                    console.log(res);
                     if (res.status === 200) {
                         localStorage.setItem('accessToken', res.data.token);
                         await Promise.all([setAccessToken(res.data.token), getUser()]);
-
-                        push('/');
+                        await push('/');
                     }
                 }).catch((e) => {
                 console.log(e);
